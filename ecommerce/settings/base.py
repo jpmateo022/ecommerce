@@ -584,17 +584,17 @@ ENABLE_ENTERPRISE_ON_RUNTIME_SWITCH = 'enable_enterprise_on_runtime'
 ENTERPRISE_CUSTOMER_COOKIE_NAME = 'enterprise_customer_uuid'
 # END ENTERPRISE APP CONFIGURATION
 
-# DJANGO DEBUG TOOLBAR CONFIGURATION
-# http://django-debug-toolbar.readthedocs.org/en/latest/installation.html
-if os.environ.get('ENABLE_DJANGO_TOOLBAR', False):
-    INSTALLED_APPS += [
-        'debug_toolbar',
-    ]
-
-    MIDDLEWARE_CLASSES += (
-        'debug_toolbar.middleware.DebugToolbarMiddleware',
-    )
-# END DJANGO DEBUG TOOLBAR CONFIGURATION
+# # DJANGO DEBUG TOOLBAR CONFIGURATION
+# # http://django-debug-toolbar.readthedocs.org/en/latest/installation.html
+# if os.environ.get('ENABLE_DJANGO_TOOLBAR', False):
+#     INSTALLED_APPS += [
+#         'debug_toolbar',
+#     ]
+#
+#     MIDDLEWARE_CLASSES += (
+#         'debug_toolbar.middleware.DebugToolbarMiddleware',
+#     )
+# # END DJANGO DEBUG TOOLBAR CONFIGURATION
 
 # Determines if events are actually sent to Segment. This should only be set to False for testing purposes.
 SEND_SEGMENT_EVENTS = True
