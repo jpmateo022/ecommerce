@@ -18,8 +18,6 @@ class ProgramApplicator(Applicator):
         super(ProgramApplicator, self).apply_offers(basket, offers)
 
     def get_offers(self, basket, user=None, request=None):
-        import pdb
-        pdb.set_trace()
         if waffle.switch_is_active("debug_selective_offers"):
             site_offers = self.get_site_offers()
             logger.info("ProgramApplicator.get_offers.site_offers: {}".format(site_offers))
