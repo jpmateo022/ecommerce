@@ -29,7 +29,7 @@ class ProgramApplicator(Applicator):
             logger.info("ProgramApplicator.get_offers.site_offers: count={}, {}".format(len(session_offers), session_offers))
 
             return list(sorted(chain(
-                session_offers, basket_offers, user_offers, user_offers,user_offers,user_offers,user_offers, user_offers, user_offers site_offers),
+                session_offers, basket_offers, user_offers, user_offers,user_offers,user_offers,user_offers, user_offers, user_offers, site_offers),
                 key=lambda o: o.priority, reverse=True))
         else:
             super(ProgramApplicator, self).get_offers(basket, user, request)
