@@ -1,7 +1,7 @@
 import logging
 from itertools import chain
 
-import newrelic
+import newrelic.agent
 import waffle
 from oscar.core.loading import get_model, get_class
 
