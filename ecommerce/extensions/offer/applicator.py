@@ -20,13 +20,13 @@ class ProgramApplicator(Applicator):
     def get_offers(self, basket, user=None, request=None):
         if waffle.switch_is_active("debug_selective_offers"):
             site_offers = self.get_site_offers()
-            logger.info("ProgramApplicator.get_offers.site_offers: {}".format(site_offers))
+            logger.info("ProgramApplicator.get_offers.site_offers: count={}, {}".format(len(site_offers), site_offers))
             basket_offers = self.get_basket_offers(basket, user)
-            logger.info("ProgramApplicator.get_offers.site_offers: {}".format(basket_offers))
+            logger.info("ProgramApplicator.get_offers.site_offers: count={}, {}".format(len(basket_offers), basket_offers))
             user_offers = self.get_user_offers(user)
-            logger.info("ProgramApplicator.get_offers.site_offers: {}".format(user_offers))
+            logger.info("ProgramApplicator.get_offers.site_offers: count={}, {}".format(len(user_offers), user_offers))
             session_offers = self.get_session_offers(request)
-            logger.info("ProgramApplicator.get_offers.site_offers: {}".format(session_offers))
+            logger.info("ProgramApplicator.get_offers.site_offers: count={}, {}".format(len(session_offers), session_offers))
 
             return list(sorted(chain(
                 session_offers, basket_offers, user_offers, site_offers),
